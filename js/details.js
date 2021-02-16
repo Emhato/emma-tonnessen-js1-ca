@@ -1,12 +1,52 @@
+const url = "https://trefle.io/api/v1/plants?token=CWjAkNFJA0A2aMCvqHZh5FXHPyzn_ghmbIIc84-fgaA&filter[scientific_name]=Urtica%20dioica";
+
+const cors = "https://noroffcors.herokuapp.com/";
+
+const corsFix = cors + url;
+
 const plantContainer = document.querySelector(".plant-container");
 
-const queryString = document.location.search;
+async function getPlant() {
+    try {
+        const response = await fetch(corsFix);
 
-const params = new URLSearchParams(queryString);
+        const data = await response.json();
 
-const scientificName = params.get("scientific_name")
+        console.log(data);
 
-console.log(scientificName)
+        const facts = data.data;
+
+        plantContainer.innerHTML = "";
+
+        plantContainer.innerHTML = `<div class="results">
+                                    <h1>${facts[0].common_name}</h1>
+                                    <div class="details-image"
+                                        style="background-image: url('${facts[0].image_url}')"></div>
+                                    </div>`;
+
+    } catch (error) {
+        console.log(error);
+        console.log("An error occurred");
+        plantContainer.innerHTML = "An error has occured, sorry for the inconvinience this may cause!";
+    }
+
+}
+
+getPlant();
+
+{/* <div class="details-image" 
+style="background-image: url('${details.background_image}')"></div> */}
+
+
+// const plantContainer = document.querySelector(".plant-container");
+
+// const queryString = document.location.search;
+
+// const params = new URLSearchParams(queryString);
+
+// const scientificName = params.get("scientific_name")
+
+// console.log(scientificName)
 
 
 // console.log(id);
