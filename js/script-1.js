@@ -28,7 +28,7 @@ async function getArchive() {
                 break;
             }
 
-            apiContainer.innerHTML += `<a href="details.html" class="result"><h2>${facts[i].common_name}</h2>
+            apiContainer.innerHTML += `<a href="details.html&filter[scientific_name]=${facts[i].scientific_name}" class="result"><h2>${facts[i].common_name}</h2>
                                         <p>(${facts[i].scientific_name})</p>
                                         <p>In the ${facts[i].family_common_name}</p>
                                         <p>(${facts[i].family})</p>
