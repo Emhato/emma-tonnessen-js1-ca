@@ -6,8 +6,6 @@ const nameParam = params.get("filter[scientific_name]");
 
 console.log(nameParam);
 
-
-
 const url = "https://trefle.io/api/v1/plants?token=CWjAkNFJA0A2aMCvqHZh5FXHPyzn_ghmbIIc84-fgaA&filter[scientific_name]=" + nameParam;
 
 const cors = "https://noroffcors.herokuapp.com/";
