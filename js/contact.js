@@ -7,8 +7,8 @@ const email = document.querySelector("#email");
 const emailError = document.querySelector("#emailError");
 const adress = document.querySelector("#adress");
 const adressError = document.querySelector("#adressError");
-const button = document.querySelector("button")
-const message = document.querySelector(".message")
+const button = document.querySelector("button");
+const message = document.querySelector(".message");
 
 function formValidation(event) {
     event.preventDefault();
