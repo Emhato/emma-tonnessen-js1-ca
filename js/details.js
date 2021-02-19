@@ -15,7 +15,7 @@ const cors = "https://noroffcors.herokuapp.com/";
 const corsFix = cors + url;
 
 const plantContainer = document.querySelector(".plant-container");
-const title = document.querySelector("title")
+const title = document.querySelector("title");
 
 async function getPlant() {
     try {
