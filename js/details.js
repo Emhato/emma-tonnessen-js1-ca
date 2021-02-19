@@ -27,7 +27,7 @@ async function getPlant() {
 
         const facts = data.data;
 
-        title.innerHTML = `${facts[0].common_name}`
+        title.innerHTML = `${facts[0].common_name}`;
 
         plantContainer.innerHTML = "";
 
